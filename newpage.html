@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Car Rental</title>
+</head>
+
+<body id="boddy">
+    
+
+    <section class="hi" id="front">
+        <div id="main">
+            <div id="nav-bar">
+
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="images/logo.png" alt="" style="height: 80px; width:100px;">
+                </div>
+
+                <!-- Dropdowns -->
+                <div class="nav-items">
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Explore</button>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="dropdown">
+                        <button class="dropbtn">About</button>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Feedback</button>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Previous Rides</button>
+                        
+                    </div>
+                </div>
+
+                <!-- Right Options-->
+                <div class="options">
+
+
+                    <div class="search-container">
+                        <form action="">
+                            <input type="text" placeholder="Search.." name="search">
+                            <img src="search.svg" alt="">
+                        </form>
+                    </div>
+
+                    <div class="cart">
+                        <img src="cart.svg" alt="">
+                    </div>
+
+                    <div class="login-button">
+                        <button onclick="openPopup()">Login</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="content">
+                <div class="inner-left">
+                    <div class="new">
+                        <p>NEW IN STOCK</p>
+                    </div>
+                    <div class="book-line">
+                        <b>
+                            <p>Book your drive now!</p>
+                        </b>
+
+                    </div>
+                    <div class="discover-buttons">
+                        
+                        <a href="#cars_page" style="
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+">Discover Now</a>
+
+                    </div>
+                </div>
+
+                <div class="inner-right">
+                    
+                    <form id="timeForm">
+                        <label for="startTime">Start Time:</label><br>
+                        <input type="datetime-local" id="startTime" name="startTime" class="cal"><br><br>
+
+                        <label for="endTime">End Time:</label><br>
+                        <input type="datetime-local" id="endTime" name="endTime" class="cal"><br><br>
+
+                        <input type="submit" value="Submit" id="submit-btn">
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pop up Login page div-->
+        <div id="popup" class="popup">
+            <div class="form-container" id="loginForm">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username"><br><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br><br>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="tab" onclick="toggleForm('signup')">Sign Up</p>
+            </div>
+
+            <div class="form-container" id="signupForm">
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="newUsername">New Username:</label><br>
+                    <input type="text" id="newUsername" name="newUsername"><br><br>
+                    <label for="newPassword">New Password:</label><br>
+                    <input type="password" id="newPassword" name="newPassword"><br><br>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p class="tab" onclick="toggleForm('login')">Login</p>
+            </div>
+            <button onclick="closePopup()">Close</button>
+        </div>
+        <!-- Overlay -->
+        <div id="overlay" class="overlay"></div>
+    </section>
+
+
+
+
+
+    <section id="cars_page" class="service" id="services">
+        <div class="heading">
+            <!-- <span>Best services</span> -->
+            <h1 style="color: rgb(161, 108, 1)";> EXPLORE OUR<br>TOP DEALS <br> FROM<br> TOP RATED DEALERS</h1>
+        </div>
+        <hr>
+        <div class="services-container">
+           
+        </div>
+            <div class="services-container">
+                <!-- New cars -->
+                <div class="box" id="car9">
+                    <div class="box-img">
+                        <img src="images/car9.png" alt="car9">
+                    </div>
+                    <p>4.6</p>
+                    <h3>2022 Toyota Fortuner</h3>
+                    <h2>₹350<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car9')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car10">
+                    <div class="box-img">
+                        <img src="images/car10.png" alt="car10">
+                    </div>
+                    <p>4.5</p>
+                    <h3>2021 Audi Q5</h3>
+                    <h2>₹400<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car10')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car11">
+                    <div class="box-img">
+                        <img src="images/car11.png" alt="car11">
+                    </div>
+                    <p>4.7</p>
+                    <h3>2020 BMW X1</h3>
+                    <h2>₹330<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car11')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car12">
+                    <div class="box-img">
+                        <img src="images/car12.png" alt="car12">
+                    </div>
+                    <p>4.3</p>
+                    <h3>2022 Mercedes-Benz G-Class</h3>
+                    <h2>₹370<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car12')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car13">
+                    <div class="box-img">
+                        <img src="images/car13.png" alt="car13">
+                    </div>
+                    <p>4.6</p>
+                    <h3>2021 Ford Mustang</h3>
+                    <h2>₹420<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car13')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car14">
+                    <div class="box-img">
+                        <img src="images/car14.png" alt="car14">
+                    </div>
+                    <p>4.8</p>
+                    <h3>2022 Jaguar F-Pace</h3>
+                    <h2>₹450<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car14')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car15">
+                    <div class="box-img">
+                        <img src="images/car15.png" alt="car15">
+                    </div>
+                    <p>4.4</p>
+                    <h3>2021 Porsche Macan</h3>
+                    <h2>₹500<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car15')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car16">
+                    <div class="box-img">
+                        <img src="images/car16.png" alt="car16">
+                    </div>
+                    <p>4.5</p>
+                    <h3>2022 Volvo XC60</h3>
+                    <h2>₹380<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car16')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car17">
+                    <div class="box-img">
+                        <img src="images/car17.png" alt="car17">
+                    </div>
+                    <p>4.6</p>
+                    <h3>2021 Land Rover Discovery</h3>
+                    <h2>₹460<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car17')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car18">
+                    <div class="box-img">
+                        <img src="images/car18.png" alt="car18">
+                    </div>
+                    <p>4.7</p>
+                    <h3>2023 Mercedes-Benz GLC</h3>
+                    <h2>₹490<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car18')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car19">
+                    <div class="box-img">
+                        <img src="images/car19.png" alt="car19">
+                    </div>
+                    <p>4.8</p>
+                    <h3>2022 BMW 7 Series</h3>
+                    <h2>₹470<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car19')">Rent Now</a>
+                </div>
+        
+                <div class="box" id="car20">
+                    <div class="box-img">
+                        <img src="images/car20.png" alt="car20">
+                    </div>
+                    <p>4.4</p>
+                    <h3>2021 Audi A4</h3>
+                    <h2>₹440<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car20')">Rent Now</a>
+                </div>
+                <div class="box" id="car1">
+                    <div class="box-img">
+                        <img src="images/car1.png" alt="car1">
+                    </div>
+                    <p>4.8</p>
+                    <h3>2020 Volkswagen Taigun</h3>
+                    <h2>₹280<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car1')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car2">
+                    <div class="box-img">
+                        <img src="images/car2.png" alt="car1">
+                    </div>
+                    <p>4.2</p>
+                    <h3>2019 Mahindra Thar</h3>
+                    <h2>₹180<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car2')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car3">
+                    <div class="box-img">
+                        <img src="images/car3.png" alt="car1">
+                    </div>
+                    <p>4.1</p>
+                    <h3>2018 Tata Nexon</h3>
+                    <h2>₹220<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car3')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car4">
+                    <div class="box-img">
+                        <img src="images/car4.png" alt="car4">
+                    </div>
+                    <p>4.4</p>
+                    <h3>2018 Honda Civic</h3>
+                    <h2>₹219<span> /month</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car4')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car5">
+                    <div class="box-img">
+                        <img src="images/car5.png" alt="car3">
+                    </div>
+                    <p>3.9</p>
+                    <h3>2021 Hyundai i10</h3>
+                    <h2>₹150<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car5')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car6">
+                    <div class="box-img">
+                        <img src="images/car6.png" alt="car1">
+                    </div>
+                    <p>4.01</p>
+                    <h3>2018 Kia Seltos</h3>
+                    <h2>₹200<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car6')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car7">
+                    <div class="box-img">
+                        <img src="images/car7.png" alt="car1">
+                    </div>
+                    <p>3.9</p>
+                    <h3>2018 Ford Ecosport</h3>
+                    <h2>₹200<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car7')">Rent Now</a>
+                </div>
+    
+                <div class="box" id="car8">
+                    <div class="box-img">
+                        <img src="images/car8.png" alt="car1">
+                    </div>
+                    <p>4.7</p>
+                    <h3>2021 Mahindra XUV-300</h3>
+                    <h2>₹250<span> /hour</span></h2>
+                    <a href="#" class="btn" onclick="showCarDetails(event,'car8')">Rent Now</a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Checkout page -->
+    <section id="checkoutPage" style="display: none;">
+        <div class="checkout-title">
+            <div class="back-button">
+                <button onclick="hide_checkout()" style="height: 53px; width: 53px; border-radius: 200px; background-color: #1abc9c; color: white;">&larr;</button>
+            </div>
+            <div class="check-heading">
+                <h1 style="color:  rgb(161, 108, 1);">Checkout Page</h1>
+            </div>
+            
+        </div>
+        <hr>
+
+        <!-- //left image to be inserted here -->
+        <div class="left_image">
+            <div id="carImage">
+                <!-- <img src="" alt="Selected Car"> -->
+            </div>
+        </div>
+
+        <!-- RIGHT PART OF CHECK OUT PAGE -->
+        <div class="container">
+            <div class="card">
+            <a href="bye.html"> <button class="proceed"><svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                    </svg></button></a> 
+                <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
+                <label>Card number:</label>
+                <input id="user" type="text" class="input cardnumber" placeholder="1234 5678 9101 1121">
+                <label>Name:</label>
+                <input class="input name" placeholder="Edgar Pérez">
+                <label class="toleft">CCV:</label>
+                <input class="input toleft ccv" placeholder="321">
+            </div>
+
+            <!-- receipt -->
+
+            <div class="receipt">
+               
+                <div id="carInfo" class="colleft">
+                    <p>Car Model:</p>
+                    <h3 id="carModel"></h3>
+                    <p>Car Rating:</p>
+                    <p id="carRating"></p>
+                    <p>Car Price:</p>
+                    <h2 id="carPrice"></h2>
+                </div>
+                <div class="colright">
+                    <p>Total Time: <span id="total-time"></span> hours</p>
+                    <p>Trip Amount: ₹ <span id="trip-amount"></span></p>
+                    <p>Cost: ₹ <span id="total-amount"></span></p>
+                    <p>Trip Protection Fee(Fixed): ₹ <span id="protection-amount"></span></p>
+                    <p>Convenience Fee (7%) : ₹ 99</p>
+                    <p>Refundable Depost: ₹ 0 </p>
+                    <h3>Total:₹ <span id="final-total"></span> /-</h3>
+                </div>
+                <!-- <p class="comprobe">This information will be sended to your email</p> -->
+            </div>
+        </div>
+    </section>
+
+    <footer id="foote">
+        <div class="row">
+            <div class="col">
+                <img src="images/logo.png" class="footer_logo">
+                <p class="footer_about">Discover a variety of car rental services tailored to your needs. Be it in-city local travel or weekend getaway plans, CarOBar will fuel your trips with reliable and comfortable rides. Plan weekend getaways with our outstation services, or enjoy the flexibility of daily and monthly car rental plans in Chandigarh. We also offer home delivery options, where we can bring home the car of your choice and you can start your trip right from yoru doorstep!
+                </p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="bottom_line"><span></span></div></h3>
+                <p>Sector 17, Near International Cricket Stadium</p>
+                <p>New Chandigarh</p>
+                <p>Sahibzada Ajit Singh Nagar, Mullanpur, Chandigarh</p>
+                <p class="footer_email">CarOBar@gamil.com</p>
+                <h4>+91 2145958195</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="bottom_line"><span></span></div></h3>
+                <ul>
+                    <li><a href="front">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">SERVICE</a></li>
+                    <li><a href="foote">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <div class="bottom_line"><span></span></div></h3>
+                <form>
+                    <ion-icon class="icon" name="mail"></ion-icon>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit"><ion-icon class="icon_right" name="arrow-round-forward"></ion-icon></button>
+                </form>
+                <div class="social_icons">
+                    <ion-icon class="social_icon" name="logo-facebook"></ion-icon>
+                    <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+                    <ion-icon class="social_icon" name="logo-twitter"></ion-icon>
+                    <ion-icon class="social_icon" name="logo-instagram"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">CarOBarⒸ 2022 - All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- <script src="script2.js"></script> -->
+
+
+</body>
+
+</html>

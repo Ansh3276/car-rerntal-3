@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <title>Back to Home Button</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right,rgb(27, 84, 120), rgb(0,0,0));
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            color:rgb(137, 215, 19);
+            font-size: 50px; /* Increased heading font size */
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+
+        .confirmation-message {
+            background-color: #e3f1ff;
+            opacity: 0.9;
+            padding: 50px; /* Increased padding for better spacing */
+            border-radius: 12px; /* Increased border-radius for a softer look */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adjusted box-shadow for depth */
+            margin-top: 10px;
+        }
+
+        .order-id {
+            color: rgb(255, 3, 3);
+            font-weight: bold;
+            font-size: 28px; /* Increased order ID font size */
+        }
+
+        .confirmation-message p {
+            font-size: 40px; /* Increased text font size */
+            line-height: 1.5; /* Adjusted line height for better readability */
+        }
+        #order-id{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Booking Confirmation !</h1>
+
+    <div class="confirmation-message">
+        <p>Your Booking has been confirmed</p>
+        <p>Your order id is <span class="order-id" id="order-id"></span></p>
+        <h3>(A copy of this has been sent to your mail)</h3>
+        <!-- <title>Back to Home Button</title> -->
+        <a href="newpage.html" style="
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#0056b3'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.3)';" onmouseout="this.style.backgroundColor='#007bff'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.2)';">
+        Back to Home
+    </a>
+    </div>
+
+    <script>
+        // Generate a random order ID
+        var randomOrderId = Math.floor(Math.random() * 1000000) + 100000;
+
+        // Display the random order ID on the page
+        document.getElementById('order-id').textContent = randomOrderId;
+    </script>
+</body>
+</html>

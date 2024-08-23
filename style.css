@@ -1,0 +1,836 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#video-background {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.dropbtn:hover
+{
+  color: brown;
+}
+body{
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+.hi {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main {
+    position: relative;
+    width: 200vh;
+    height:160vh;
+    /* height: 150vh; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/Car_Rental/image1.jpg');
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+}
+
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #62584b; */
+    padding: 10px 20px;
+    color: white;
+    background-color: rgb(25, 41, 51)
+}
+
+.nav-items {
+    display: flex;
+    gap: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    /* background-color: #333; */
+    background-color: rgb(25, 41, 51);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container img {
+    margin-left: -30px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.cart img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.login-button button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-button button:hover {
+    background-color: #45a049;
+}
+#content {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: calc(100vh - 50px);
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    gap: 370px;
+}
+
+.inner-left {
+    margin-top: 180px;
+    margin-left: 150px;
+    width: 400px;
+}
+
+.new {
+    color: white;
+    font-size: 15px;
+}
+
+.book-line {
+    color: #e2e2e2;
+    font-size: 50px;
+    width: 400px;
+    font-weight: 200px;
+}
+
+.discover-buttons button {
+    background-color: white;
+    border: none;
+    height: 50px;
+    width: 120px;
+}
+
+.inner-right {
+    margin-top: 150px;
+    margin-right: 150px;
+    border: 1px solid white;
+    height: 310px;
+    width: 350px;
+    padding-top: 25px;
+    padding-left: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    justify-content: center;
+}
+
+.inner-right label {
+    font-size: 30px;
+}
+
+.cal {
+    height: 40px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#submit-btn {
+    border-radius: 5px;
+    height: 40px;
+    width: 300px;
+    background-color:#007bff;
+    border: none;
+    color: white;
+}
+
+#submissionMessage {
+    height: 200px;
+    width: 350px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#submissionMessage p {
+    margin-top: 160px;
+    font-size: 35px;
+}
+
+#main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: background-image 5s ease-in-out;
+    background-image: url('default_image.jpg');
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+}
+
+/* Styles for the popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    ;
+    width: 50%;
+    height: 50%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    /* Ensure the popup appears on top of other content */
+    display: none;
+    /* Initially hidden */
+}
+
+/* Styles for the overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    z-index: 9998;
+    /* Ensure the overlay appears below the popup */
+    display: none;
+    /* Initially hidden */
+}
+
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the sign up form by default */
+#signupForm {
+    display: none;
+}
+
+/* Styles for the tabs (Login/Sign Up links) */
+.tab {
+    cursor: pointer;
+}
+
+/* Styles for active tab */
+.active {
+    font-weight: bold;
+}
+
+
+
+#boddy {
+    /* background-color: rgb(1, 59, 61); */
+    background-color: rgb(25, 41, 51);
+}
+
+
+
+hr {
+    width: 100%;
+    /* You can adjust the percentage or use pixels, em, etc. */
+    margin: 20px auto;
+    /* Optional: Center the horizontal rule on the page */
+    border: none;
+    /* Optional: Remove the default border */
+    background-color: #4e9309;
+    /* Optional: Set a background color for the horizontal rule */
+    height: 10px;
+    /* Optional: Set the height of the horizontal rule */
+}
+
+.box {
+    background: transparent;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    /* background-image: url(images/bgimg.jpg); */
+}
+
+:root {
+    --main-color: #4e9309;
+    --second-color: #62584b;
+    --text-color: white;
+    --text-color2: #010101;
+    --border-color1: grey;
+    --green-color: #4e9309;
+    --gradient: linear-gradient(#fe5b3d, #ffac38);
+}
+
+.heading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 40px;
+    color: var(--text-color);
+}
+
+
+section {
+    padding: 50px 100px;
+}
+
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.services-container .box {
+    padding: 10px;
+    border: 2px solid rgb(71, 70, 70);
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgb(213, 204, 167);
+
+}
+
+.services-container .box .box-img {
+    width: 100%;
+    height: 200px;
+    
+}
+
+
+
+
+
+.services-container .box .box-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.services-container .box .box-img img:hover{
+    transform: scale(1.06);
+}
+
+.services-container .box p {
+    padding: 0 10px;
+    border: 1px solid var(--text-color);
+    width: 58px;
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    margin: 1rem 0 1rem;
+}
+
+
+.services-container .box h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 0.2rem 0 0.5rem;
+}
+
+.services-container .box h3 {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.services-container .box h2 span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.services-container .box .btn {
+    display: flex;
+    justify-content: center;
+    background: rgb(161, 108, 1);
+    color: #ffff;
+    padding: 10px;
+    border-radius: 1.5rem;
+}
+
+.services-container .box .btn:hover {
+    background: var(--main-color);
+}
+
+
+
+/* CHECKOUT STYLING STARTS */
+
+
+
+/* If you like this, please check my blog at codedgar.com.ve */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+/* If you like this, please check my blog at codedgar.com.ve */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* body {
+        background-color: rgb(113, 110, 110);
+        
+    }    */
+    .checkout-title {
+        overflow: hidden;
+        display: flex;
+        /* background-color: rgba(139, 116, 116, 0.5); */
+        font-size: 20px;
+        text-align: center;
+        /* justify-content: center; */
+        color: rgb(25, 41, 51);
+        /* margin-bottom: 10px; */
+        /* width: 100%; */
+        text-transform: uppercase;
+        /* Convert text to uppercase for a stylish look */
+        font-family: "Lobster", sans-serif;
+        /* Choose a suitable font family */
+        letter-spacing: 2px;
+        /* Add letter spacing for better readability */
+        font-weight: bold;
+        /* Emphasize the heading with bold text */
+    }
+    .back-button{
+        width: 40%;
+        align-self: flex-start;
+        
+        height: 20px;
+    }
+    .checkout check-heading{
+        width: 80%;
+        /* font-size: 80px; */
+        align-self: center; 
+    }
+
+@media (max-width: 600px) {
+    .heading {
+        font-size: 30px;
+        /* Adjust the font size for smaller screens */
+    }
+}
+
+hr {
+    width: 100%;
+    /* You can adjust the percentage or use pixels, em, etc. */
+    margin: 20px auto;
+    /* Optional: Center the horizontal rule on the page */
+    border: none;
+    /* Optional: Remove the default border */
+    background-color: #000000;
+    /* Optional: Set a background color for the horizontal rule */
+    height: 5px;
+    /* Optional: Set the height of the horizontal rule */
+}
+
+
+/* VISA CARD AND OTHER PART STYLING */
+
+#checkoutPage {
+    background-color: rgb(25,41,51);
+    position: relative;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.container {
+    position: absolute;
+    right: 80px;
+    left: 50%;
+
+}
+
+.card {
+    background: #16181a;
+    border-radius: 14px;
+    max-width: 300px;
+    display: block;
+    margin: auto;
+    padding: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 2px 10px 40px black;
+    z-index: 99;
+    /* margin-left: calc((100% - 300px) / 2); */
+}
+
+.logo-card {
+    max-width: 50px;
+    margin-bottom: 15px;
+    margin-top: -19px;
+}
+
+label {
+    display: flex;
+    font-size: 10px;
+    color: white;
+    opacity: .4;
+}
+
+input {
+    font-family: 'Work Sans', sans-serif;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    color: #dbdce0;
+    transition: border-bottom .4s;
+}
+
+input:focus {
+    border-bottom: 1px solid #1abc9c;
+    outline: none;
+}
+
+.cardnumber {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.name {
+    display: block;
+    font-size: 15px;
+    max-width: 200px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.toleft {
+    float: left;
+}
+
+.ccv {
+    width: 50px;
+    margin-top: -5px;
+    font-size: 15px;
+}
+
+/* LEFT IMAGE*/
+.left_image {
+    width: 50%;
+    float: left;
+}
+
+#carImage img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.receipt {
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 5%;
+    padding-top: 190px;
+    max-width: 600px;
+    height: 280px;
+    display: block;
+    margin: auto;
+    margin-top: -180px;
+    z-index: -999;
+    position: relative;
+}
+
+.colleft {
+    width: 50%;
+    float: left;
+}
+.colright {
+    width: 50%;
+    float: right;
+}
+
+#carModel {
+    color: #d53a3a;
+}
+
+#carPrice {
+    color: #d53a3a;
+}
+
+#carRating {
+    color: #d53a3a;
+}
+
+.bought-item {
+    background: #f5f5f5;
+    padding: 2px;
+}
+
+.bought-items {
+    margin-top: -3px;
+}
+
+
+
+.description {
+    font-size: 13px;
+}
+
+.price {
+    font-size: 12px;
+}
+
+.comprobe {
+    text-align: center;
+}
+
+.proceed {
+    position: absolute;
+    transform: translate(300px, 10px);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1abc9c;
+    border: none;
+    color: white;
+    transition: box-shadow .2s, transform .4s;
+    cursor: pointer;
+}
+
+.proceed:active {
+    outline: none;
+}
+
+.proceed:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.sendicon {
+    filter: invert(100%);
+    padding-top: 2px;
+}
+
+@media (max-width: 600px) {
+    .proceed {
+        transform: translate(250px, 10px);
+    }
+
+    .col {
+        display: block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+}
+/* FOOTER CSS */
+
+
+
+footer{
+    width: 100%;
+    background: linear-gradient(to right,rgb(25,41,51), rgb(0,0,0));
+    color: #fff;
+    padding: 50px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col:nth-child(2), .col:nth-child(3){
+    flex-basis: 15%;
+}
+.footer_logo{
+    width: 80px;
+    position: relative;
+    top: -23px;
+    left: -20px;
+}
+.footer_about{
+    position: relative;
+    top: -23px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+.footer_email{
+    width: fit-content;
+    border-bottom: 1px solid #4e9309;
+    margin: 20px 0;
+}
+.col ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+.col ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.col form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #4e9309;
+    margin-bottom: 50px;
+}
+.col form .icon{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.col form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+.col form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.col form button .icon_right{
+    font-size: 16px;
+    color: #ccc;
+}
+.col .social_icons .social_icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background: #4e9309;
+    margin-right: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+footer .copyright{
+    text-align: center;
+}
+.bottom_line{
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.bottom_line span{
+    width: 15px;
+    height: 100%;
+    background: #4e9309;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moveline 2s linear infinite;
+}
+@keyframes moveline{
+    0%{
+        left:-20px;
+    }
+    100%{
+        left:100%;
+    }
+}
+/* .services-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+} */
